@@ -7,10 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Song {
     @Id
     private String id;
-    private String albumId;
     private String ISRC;
     private String title;
     private Integer length;
+
+    public Song(String ISRC, String title, Integer length) {
+        this.ISRC = ISRC;
+        this.title = title;
+        this.length = length;
+    }
 
     public String getId() {
         return id;
@@ -18,14 +23,6 @@ public class Song {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public String getAlbumId() {
-        return albumId;
-    }
-
-    public void setAlbumId(String albumId) {
-        this.albumId = albumId;
     }
 
     public String getISRC() {
