@@ -64,6 +64,7 @@ public class SongController {
 
     @PostConstruct
     public void fillDB() {
+
         if(songRepository.count()==0) {
             songRepository.save(new Song("7875455454","Roxanne",120));
             songRepository.save(new Song("7875455454","De DO DO",129));
@@ -71,6 +72,7 @@ public class SongController {
             songRepository.save(new Song("8452131444","Highest in the Room",180));
         }
 
+        System.out.println("Song Service");
         System.out.println("Songs test:" + songRepository.findSongsByISRC("7875455454").size());
     }
 
