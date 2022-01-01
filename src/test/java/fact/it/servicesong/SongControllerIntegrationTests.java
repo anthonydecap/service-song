@@ -58,6 +58,6 @@ public class SongControllerIntegrationTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("7875455454")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
-                .andExpect(jsonPath("$.legth", is(120)));
+                .andExpect(jsonPath("$.length", is(120)));
     }
 }
