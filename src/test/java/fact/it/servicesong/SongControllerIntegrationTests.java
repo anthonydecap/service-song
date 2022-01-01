@@ -55,7 +55,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenGetSongByISBNAndName_thenReturnJsonSong() throws Exception {
 
-        mockMvc.perform(get("/songs/album/{ISRC}/{title}", "7875455454", "Roxanne"))
+        mockMvc.perform(get("/songs?title={title}/album/{ISRC}", "7875455454", "Roxanne"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("7875455454")))
@@ -89,7 +89,7 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album3);
 
-        mockMvc.perform(get("/songs/{title}", "Roxanne"))
+        mockMvc.perform(get("/songs?title={title}", "Roxanne"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
@@ -134,7 +134,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenDeleteSong_thenStatusOk() throws Exception {
 
-        mockMvc.perform(delete("/songs/album/{ISRC}/{title}", "7875455454", "Roxanne")
+        mockMvc.perform(delete("/songs?title={title}/album/{ISRC}", "7875455454", "Roxanne")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -142,7 +142,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenNoSong_whenDeleteSong_thenStatusNotFound() throws Exception {
 
-        mockMvc.perform(delete("/songs/album/{ISRC}/{title}", "1958255454", "BaBy ShArK")
+        mockMvc.perform(delete("/songs?title={title}/album/{ISRC}", "1958255454", "BaBy ShArK")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
