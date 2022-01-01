@@ -25,8 +25,8 @@ public class SongController {
         return songRepository.findSongsByISRC(ISRC);
     }
 
-    @GetMapping("/songs/album/{ISRC}/{title}/")
-    public Song getSongsByISRC(@PathVariable String ISRC, @PathVariable String title) {
+    @GetMapping("/songs?title={title}/album/{ISRC}")
+    public Song getSongsByISRCAndTitle(@PathVariable String ISRC, @PathVariable String title) {
         return songRepository.findSongByISRCAndTitle(ISRC,title);
     }
 
@@ -50,7 +50,7 @@ public class SongController {
         return retrievedSong;
     }
 
-    @DeleteMapping("/songs/album/{ISRC}/{title}/")
+    @DeleteMapping("/songs?title={title}/album/{ISRC}")
     public ResponseEntity deleteSong(@PathVariable String ISRC, @PathVariable String title) {
         Song song = songRepository.findSongByISRCAndTitle(ISRC,title);
         if(song!=null) {
