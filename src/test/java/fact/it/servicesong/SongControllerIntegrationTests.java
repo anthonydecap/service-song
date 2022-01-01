@@ -53,7 +53,7 @@ public class SongControllerIntegrationTests {
     private ObjectMapper mapper = new ObjectMapper();
 
     @Test
-    public void givenSong_whenGetSongByISBNAndTitle() throws Exception {
+    public void givenSong_whenGetSongByISRCAndTitle() throws Exception {
 
         mockMvc.perform(get("/songs?title={title}/album/{ISRC}", "Roxanne", "7875455454"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -89,7 +89,7 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album3);
 
-        mockMvc.perform(get("/songs?title={title}", "Roxanne"))
+        mockMvc.perform(get("/songs/{title}", "Roxanne"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
