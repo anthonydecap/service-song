@@ -116,13 +116,13 @@ public class SongControllerIntegrationTests {
     }
 
     @Test
-    public void givenSong_whenPutSong_thenReturnJsonReview() throws Exception {
+    public void givenSong_whenPutSong_thenReturnJsonSong() throws Exception {
 
-        Song updatedReview = new Song("7875455884","Message in a bottle",156);
+        Song updatedSong = new Song("7875455884","Message in a bottle",156);
 
 
-        mockMvc.perform(put("/reviews")
-                .content(mapper.writeValueAsString(updatedReview))
+        mockMvc.perform(put("/songs")
+                .content(mapper.writeValueAsString(updatedSong))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
