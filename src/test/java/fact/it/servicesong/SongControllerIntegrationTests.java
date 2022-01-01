@@ -56,7 +56,7 @@ public class SongControllerIntegrationTests {
         mockMvc.perform(get("/songs/album/{ISRC}/{title}/", "7875455454", "Roxanne"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.ISRC", is("7875455454")))
+                .andExpect(jsonPath("$.isrc", is("7875455454")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
                 .andExpect(jsonPath("$.legth", is(120)));
     }
