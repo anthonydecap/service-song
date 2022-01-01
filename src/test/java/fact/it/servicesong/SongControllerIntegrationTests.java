@@ -134,7 +134,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenDeleteSong_thenStatusOk() throws Exception {
 
-        mockMvc.perform(delete("/songs?title={title}/album/{ISRC}", "Roxanne", "7875455454")
+        mockMvc.perform(delete("/songs/{title}/album/{ISRC}", "Roxanne", "7875455454")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -142,7 +142,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenNoSong_whenDeleteSong_thenStatusNotFound() throws Exception {
 
-        mockMvc.perform(delete("/songs?title={title}/album/{ISRC}", "1958255454", "BaBy ShArK")
+        mockMvc.perform(delete("/songs/{title}/album/{ISRC}", "1958255454", "BaBy ShArK")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
