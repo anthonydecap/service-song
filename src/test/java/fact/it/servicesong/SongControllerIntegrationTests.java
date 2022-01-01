@@ -55,7 +55,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenGetSongByISRCAndTitle() throws Exception {
 
-        mockMvc.perform(get("/songs?title={title}/album/{ISRC}", "Roxanne", "7875455454"))
+        mockMvc.perform(get("/songs/title}/album/{ISRC}", "Roxanne", "7875455454"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("7875455454")))
