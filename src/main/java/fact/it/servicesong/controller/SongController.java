@@ -20,10 +20,10 @@ public class SongController {
         return songRepository.findSongByISRC(ISRC);
     }
 
-    @GetMapping("/songs/{MBID}")
+    @GetMapping("/songs/artist/{MBID}")
     public List<Song> getSongsByMBID(@PathVariable String MBID) { return songRepository.findSongsByMBID(MBID); }
 
-    @GetMapping("/songs/{genre}")
+    @GetMapping("/songs/genre/{genre}")
     public List<Song> getSongsByGenre(@PathVariable String genre) {
         return songRepository.findSongsByGenre(genre);
     }
