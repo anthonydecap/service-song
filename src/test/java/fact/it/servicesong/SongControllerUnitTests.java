@@ -127,9 +127,9 @@ public class SongControllerUnitTests {
 
         given(songRepository.findSongByISRC("ISRC7875455454")).willReturn(song1Album1);
 
-        Song updatedSong = new Song("ISRC7875455454","MBID111","Rock","Message In A Bottle",160);
+        Song updatedSong = new Song("ISRC7875455454","MBID111","Rock","Roxanne",160);
 
-        mockMvc.perform(put("/reviews")
+        mockMvc.perform(put("/songs")
                 .content(mapper.writeValueAsString(updatedSong))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -137,7 +137,7 @@ public class SongControllerUnitTests {
                 .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$.mbid", is("MBID111")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
-                .andExpect(jsonPath("$.title", is("Message In A Bottle")))
+                .andExpect(jsonPath("$.title", is("Roxanne")))
                 .andExpect(jsonPath("$.length", is(160)));
     }
 
