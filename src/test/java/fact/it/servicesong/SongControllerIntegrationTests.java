@@ -73,7 +73,7 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album2);
 
-        mockMvc.perform(get("/songs/artist/{MBID}", "MBID111").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/songs/artist/{MBID}", "MBID111"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
