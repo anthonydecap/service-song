@@ -28,11 +28,11 @@ public class SongControllerIntegrationTests {
     @Autowired
     private SongRepository songRepository;
 
-    private Song song1Album1 = new Song("ISRC7875455454","111","Rock","Roxanne",120);
-    private Song song2Album1 = new Song("ISRC7875455455","111","Rock","De DO DO",160);
-    private Song song1Album2 = new Song("ISRC6242455454","222","rap","Goosbumps",150);
-    private Song song2Album2 = new Song("ISRC6242455455","222","rap","Highest In The Room",140);
-    private Song song1Album3 = new Song("ISRC4442455455","333","jazz","Pikelar",340);
+    private Song song1Album1 = new Song("ISRC7875455454","MBID111","Rock","Roxanne",120);
+    private Song song2Album1 = new Song("ISRC7875455455","MBID111","Rock","De DO DO",160);
+    private Song song1Album2 = new Song("ISRC6242455454","MBID222","rap","Goosbumps",150);
+    private Song song2Album2 = new Song("ISRC6242455455","MBID222","rap","Highest In The Room",140);
+    private Song song1Album3 = new Song("ISRC4442455455","MBID333","jazz","Pikelar",340);
 
 
     @BeforeEach
@@ -60,7 +60,7 @@ public class SongControllerIntegrationTests {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
-                .andExpect(jsonPath("$.mbid", is("111")))
+                .andExpect(jsonPath("$.mbid", is("MBID111")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
                 .andExpect(jsonPath("$.length", is(120)));
@@ -73,19 +73,19 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album2);
 
-        mockMvc.perform(get("/songs/artist/{MBID}", "111").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/songs/artist/{MBID}", "MBID111").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
 
                 .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
-                .andExpect(jsonPath("$[0].mbid", is("111")))
+                .andExpect(jsonPath("$[0].mbid", is("MBID111")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
 
                 .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
-                .andExpect(jsonPath("$[1].mbid", is("111")))
+                .andExpect(jsonPath("$[1].mbid", is("MBID111")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
                 .andExpect(jsonPath("$[1].length", is(160)));
@@ -104,13 +104,13 @@ public class SongControllerIntegrationTests {
                 .andExpect(jsonPath("$", hasSize(2)))
 
                 .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
-                .andExpect(jsonPath("$[0].mbid", is("111")))
+                .andExpect(jsonPath("$[0].mbid", is("MBID111")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
 
                 .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
-                .andExpect(jsonPath("$[1].mbid", is("111")))
+                .andExpect(jsonPath("$[1].mbid", is("MBID111")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
                 .andExpect(jsonPath("$[1].length", is(160)));
@@ -119,7 +119,7 @@ public class SongControllerIntegrationTests {
 
     @Test
     public void whenPostSong_thenReturnJsonSong() throws Exception {
-        Song song2Album3 = new Song("ISRC2875455454","333","jazz","Roxanne",120);
+        Song song2Album3 = new Song("ISRC2875455454","MBID333","jazz","Roxanne",120);
 
         mockMvc.perform(post("/songs")
                 .content(mapper.writeValueAsString(song2Album3))
@@ -128,7 +128,7 @@ public class SongControllerIntegrationTests {
                 .andExpect(status().isOk())
 
                 .andExpect(jsonPath("$.isrc", is("ISRC2875455454")))
-                .andExpect(jsonPath("$.mbid", is("333")))
+                .andExpect(jsonPath("$.mbid", is("MBID333")))
                 .andExpect(jsonPath("$.genre", is("jazz")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
                 .andExpect(jsonPath("$.length", is(120)));
@@ -137,7 +137,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenPutSong_thenReturnJsonSong() throws Exception {
 
-        Song updatedSong = new Song("ISRC7875455454","111","Rock","Message In A Bottle",120);
+        Song updatedSong = new Song("ISRC7875455454","MBID111","Rock","Message In A Bottle",120);
 
 
         mockMvc.perform(put("/songs")
@@ -147,7 +147,7 @@ public class SongControllerIntegrationTests {
                 .andExpect(status().isOk())
 
                 .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
-                .andExpect(jsonPath("$.mbid", is("111")))
+                .andExpect(jsonPath("$.mbid", is("MBID111")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
                 .andExpect(jsonPath("$.title", is("Message In A Bottle")))
                 .andExpect(jsonPath("$.length", is(120)));
