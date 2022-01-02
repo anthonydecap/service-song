@@ -57,7 +57,7 @@ public class SongControllerIntegrationTests {
     public void givenSong_whenGetSongByISRC() throws Exception {
 
         mockMvc.perform(get("/songs/isrc/{ISRC}",  "7875455454"))
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("7875455454")))
                 .andExpect(jsonPath("$.mbid", is("111")))
