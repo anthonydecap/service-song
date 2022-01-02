@@ -8,9 +8,9 @@ import java.util.List;
 
 @Repository
 public interface SongRepository extends MongoRepository<Song, String> {
-    List<Song> findSongsByISRC(String ISRC);
-    List<Song> findSongsByTitle(String title);
-    Song findSongByISRCAndTitle(String ISRC, String title);
+    Song findSongByISRC(String ISRC);
+    List<Song> findSongsByGenre(String genre);
+    List<Song> findSongsByMBID(String IMDB);
 }
 
 

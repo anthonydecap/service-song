@@ -15,19 +15,17 @@ public class SongController {
     @Autowired
     private SongRepository songRepository;
 
-    @GetMapping("/songs/{title}")
-    public List<Song> getSongsByTitle(@PathVariable String title) {
-        return songRepository.findSongsByTitle(title);
-    }
-
     @GetMapping("/songs/{ISRC}")
-    public List<Song> getSongsByISRC(@PathVariable String ISRC) {
-        return songRepository.findSongsByISRC(ISRC);
+    public Song getSongByISRC(@PathVariable String ISRC) {
+        return songRepository.findSongByISRC(ISRC);
     }
 
-    @GetMapping("/songs?title={title}/album/{ISRC}")
-    public Song getSongsByISRCAndTitle(@PathVariable String ISRC, @PathVariable String title) {
-        return songRepository.findSongByISRCAndTitle(ISRC,title);
+    @GetMapping("/songs/{MBID}")
+    public List<Song> getSongsByMBID(@PathVariable String MBID) { return songRepository.findSongsByMBID(MBID); }
+
+    @GetMapping("/songs/{genre}")
+    public List<Song> getSongsByGenre(@PathVariable String genre) {
+        return songRepository.findSongsByGenre(genre);
     }
 
     @PostMapping("/songs")
@@ -38,10 +36,12 @@ public class SongController {
 
     @PutMapping("/songs")
     public Song updateSong(@RequestBody Song updateSong) {
-        Song retrievedSong = songRepository.findSongByISRCAndTitle(
-            updateSong.getISRC(), updateSong.getTitle());
+        Song retrievedSong = songRepository.findSongByISRC(
+            updateSong.getISRC());
 
         retrievedSong.setISRC(updateSong.getISRC());
+        retrievedSong.setTitle(updateSong.getMBID());
+        retrievedSong.setTitle(updateSong.getGenre());
         retrievedSong.setTitle(updateSong.getTitle());
         retrievedSong.setLength(updateSong.getLength());
 
@@ -50,9 +50,9 @@ public class SongController {
         return retrievedSong;
     }
 
-    @DeleteMapping("/songs?title={title}/album/{ISRC}")
-    public ResponseEntity deleteSong(@PathVariable String ISRC, @PathVariable String title) {
-        Song song = songRepository.findSongByISRCAndTitle(ISRC,title);
+    @DeleteMapping("/songs/{ISRC}")
+    public ResponseEntity deleteSong(@PathVariable String ISRC) {
+        Song song = songRepository.findSongByISRC(ISRC);
         if(song!=null) {
             songRepository.delete(song);
             return ResponseEntity.ok().build();
@@ -66,14 +66,14 @@ public class SongController {
     public void fillDB() {
 
         if(songRepository.count()==0) {
-            songRepository.save(new Song("7875455454","Roxanne",120));
-            songRepository.save(new Song("7875455454","De DO DO",129));
-            songRepository.save(new Song("8452131444","Goosebumps",284));
-            //songRepository.save(new Song("8452131444","Highest in the Room",180));
+            songRepository.save(new Song("7875455454","111","Rock","Roxanne",120));
+            songRepository.save(new Song("7875455454","111","Rock","De DO DO",120));
+            songRepository.save(new Song("6242455454","222","rap","Goosbumps",120));
+            songRepository.save(new Song("6242455455","222","rap","Highest in the room",120));
         }
 
         System.out.println("Song Service");
-        System.out.println("Songs test:" + songRepository.findSongsByISRC("7875455454").size());
+        System.out.println("Songs test:" + songRepository.findSongsByMBID("222").size());
     }
 
 

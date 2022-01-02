@@ -8,13 +8,20 @@ public class Song {
     @Id
     private String id;
     private String ISRC;
+    private String MBID;
+    private String genre;
     private String title;
     private Integer length;
 
-    public Song(String ISRC, String title, Integer length) {
-        this.ISRC = ISRC;
-        this.title = title;
-        this.length = length;
+    public Song() {
+    }
+
+    public Song(String ISRC, String MBID,String genre, String title, Integer length) {
+        setISRC(ISRC);
+        setMBID(MBID);
+        setGenre(genre);
+        setTitle(title);
+        setLength(length);
     }
 
     public String getId() {
@@ -32,6 +39,14 @@ public class Song {
     public void setISRC(String ISRC) {
         this.ISRC = ISRC;
     }
+
+    public String getMBID() { return MBID; }
+
+    public void setMBID(String MBID) { this.MBID = MBID; }
+
+    public String getGenre() { return genre; }
+
+    public void setGenre(String genre) { this.genre = genre; }
 
     public String getTitle() {
         return title;
