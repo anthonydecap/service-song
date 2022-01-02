@@ -56,8 +56,8 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenGetSongByISRC() throws Exception {
 
-        mockMvc.perform(get("/songs/isrc/{ISRC}",  "7875455454"))
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+        mockMvc.perform(get("/songs/isrc/{ISRC}",  "7875455454").contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.isrc", is("7875455454")))
                 .andExpect(jsonPath("$.mbid", is("111")))
@@ -73,7 +73,7 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album2);
 
-        mockMvc.perform(get("/songs/artist/{MBID}", "111"))
+        mockMvc.perform(get("/songs/artist/{MBID}", "111").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
@@ -98,7 +98,7 @@ public class SongControllerIntegrationTests {
         songList.add(song1Album1);
         songList.add(song1Album2);
 
-        mockMvc.perform(get("/songs/genre/{genre}", "Rock"))
+        mockMvc.perform(get("/songs/genre/{genre}", "Rock").contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
