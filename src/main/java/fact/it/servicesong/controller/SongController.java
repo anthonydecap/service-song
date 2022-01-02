@@ -16,17 +16,14 @@ public class SongController {
     private SongRepository songRepository;
 
     @GetMapping("/songs/{ISRC}")
-    @ResponseBody
     public Song getSongByISRC(@PathVariable String ISRC) {
         return songRepository.findSongByISRC(ISRC);
     }
 
     @GetMapping("/songs/{MBID}")
-    @ResponseBody
     public List<Song> getSongsByMBID(@PathVariable String MBID) { return songRepository.findSongsByMBID(MBID); }
 
     @GetMapping("/songs/{genre}")
-    @ResponseBody
     public List<Song> getSongsByGenre(@PathVariable String genre) {
         return songRepository.findSongsByGenre(genre);
     }

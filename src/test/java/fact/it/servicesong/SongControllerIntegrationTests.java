@@ -28,11 +28,11 @@ public class SongControllerIntegrationTests {
     @Autowired
     private SongRepository songRepository;
 
-    private Song song1Album1 = new Song("7875455454","111","Rock","Roxanne",120);
-    private Song song2Album1 = new Song("7875455455","111","Rock","De DO DO",160);
-    private Song song1Album2 = new Song("6242455454","222","rap","Goosbumps",150);
-    private Song song2Album2 = new Song("6242455455","222","rap","Highest In The Room",140);
-    private Song song1Album3 = new Song("4442455455","333","jazz","Pikelar",340);
+    private Song song1Album1 = new Song("ISRC7875455454","111","Rock","Roxanne",120);
+    private Song song2Album1 = new Song("ISRC7875455455","111","Rock","De DO DO",160);
+    private Song song1Album2 = new Song("ISRC6242455454","222","rap","Goosbumps",150);
+    private Song song2Album2 = new Song("ISRC6242455455","222","rap","Highest In The Room",140);
+    private Song song1Album3 = new Song("ISRC4442455455","333","jazz","Pikelar",340);
 
 
     @BeforeEach
@@ -56,10 +56,10 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenGetSongByISRC() throws Exception {
 
-        mockMvc.perform(get("/songs/isrc/{ISRC}",  "7875455454").contentType(MediaType.APPLICATION_JSON))
+        mockMvc.perform(get("/songs/{ISRC}",  "ISRC7875455454"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.isrc", is("7875455454")))
+                .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$.mbid", is("111")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
@@ -78,13 +78,13 @@ public class SongControllerIntegrationTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
 
-                .andExpect(jsonPath("$[0].isrc", is("7875455454")))
+                .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$[0].mbid", is("111")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
 
-                .andExpect(jsonPath("$[1].isrc", is("7875455455")))
+                .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
                 .andExpect(jsonPath("$[1].mbid", is("111")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
@@ -103,13 +103,13 @@ public class SongControllerIntegrationTests {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(2)))
 
-                .andExpect(jsonPath("$[0].isrc", is("7875455454")))
+                .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$[0].mbid", is("111")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
 
-                .andExpect(jsonPath("$[1].isrc", is("7875455455")))
+                .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
                 .andExpect(jsonPath("$[1].mbid", is("111")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
@@ -119,7 +119,7 @@ public class SongControllerIntegrationTests {
 
     @Test
     public void whenPostSong_thenReturnJsonSong() throws Exception {
-        Song song2Album3 = new Song("2875455454","333","jazz","Roxanne",120);
+        Song song2Album3 = new Song("ISRC2875455454","333","jazz","Roxanne",120);
 
         mockMvc.perform(post("/songs")
                 .content(mapper.writeValueAsString(song2Album3))
@@ -127,7 +127,7 @@ public class SongControllerIntegrationTests {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
 
-                .andExpect(jsonPath("$.isrc", is("2875455454")))
+                .andExpect(jsonPath("$.isrc", is("ISRC2875455454")))
                 .andExpect(jsonPath("$.mbid", is("333")))
                 .andExpect(jsonPath("$.genre", is("jazz")))
                 .andExpect(jsonPath("$.title", is("Roxanne")))
@@ -137,7 +137,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenPutSong_thenReturnJsonSong() throws Exception {
 
-        Song updatedSong = new Song("7875455454","111","Rock","Message In A Bottle",120);
+        Song updatedSong = new Song("ISRC7875455454","111","Rock","Message In A Bottle",120);
 
 
         mockMvc.perform(put("/songs")
@@ -146,7 +146,7 @@ public class SongControllerIntegrationTests {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
 
-                .andExpect(jsonPath("$.isrc", is("7875455454")))
+                .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$.mbid", is("111")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
                 .andExpect(jsonPath("$.title", is("Message In A Bottle")))
@@ -156,7 +156,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenSong_whenDeleteSong_thenStatusOk() throws Exception {
 
-        mockMvc.perform(delete("/songs/{ISRC}","7875455454")
+        mockMvc.perform(delete("/songs/{ISRC}","ISRC7875455454")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
@@ -164,7 +164,7 @@ public class SongControllerIntegrationTests {
     @Test
     public void givenNoSong_whenDeleteSong_thenStatusNotFound() throws Exception {
 
-        mockMvc.perform(delete("/songs/{ISRC}", "1958255454")
+        mockMvc.perform(delete("/songs/{ISRC}", "ISRC1958255454")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
