@@ -82,7 +82,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$[0].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[0].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[0].maid", is("MAID1")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
@@ -90,7 +90,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
                 .andExpect(jsonPath("$[1].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[1].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[1].maid", is("MAID1")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
                 .andExpect(jsonPath("$[1].length", is(160)))
@@ -111,7 +111,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$[0].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[0].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[0].maid", is("MAID1")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
@@ -119,7 +119,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
                 .andExpect(jsonPath("$[1].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[1].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[1].maid", is("MAID1")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
                 .andExpect(jsonPath("$[1].length", is(160)))
@@ -140,7 +140,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[0].isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$[0].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[0].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[0].maid", is("MAID1")))
                 .andExpect(jsonPath("$[0].genre", is("Rock")))
                 .andExpect(jsonPath("$[0].title", is("Roxanne")))
                 .andExpect(jsonPath("$[0].length", is(120)))
@@ -148,7 +148,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$[1].isrc", is("ISRC7875455455")))
                 .andExpect(jsonPath("$[1].mbid", is("MBID111")))
-                .andExpect(jsonPath("$[1].mbid", is("MAID1")))
+                .andExpect(jsonPath("$[1].maid", is("MAID1")))
                 .andExpect(jsonPath("$[1].genre", is("Rock")))
                 .andExpect(jsonPath("$[1].title", is("De DO DO")))
                 .andExpect(jsonPath("$[1].length", is(160)))
