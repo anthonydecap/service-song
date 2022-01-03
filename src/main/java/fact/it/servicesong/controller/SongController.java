@@ -23,6 +23,9 @@ public class SongController {
     @GetMapping("/songs/artist/{MBID}")
     public List<Song> getSongsByMBID(@PathVariable String MBID) { return songRepository.findSongsByMBID(MBID); }
 
+    @GetMapping("/songs/album/{MAID}")
+    public List<Song> getSongsByMAID(@PathVariable String MAID) { return songRepository.findSongsByMAID(MAID); }
+
     @GetMapping("/songs/genre/{genre}")
     public List<Song> getSongsByGenre(@PathVariable String genre) {
         return songRepository.findSongsByGenre(genre);
@@ -41,9 +44,11 @@ public class SongController {
 
         retrievedSong.setISRC(updateSong.getISRC());
         retrievedSong.setTitle(updateSong.getMBID());
+        retrievedSong.setTitle(updateSong.getMAID());
         retrievedSong.setTitle(updateSong.getGenre());
         retrievedSong.setTitle(updateSong.getTitle());
         retrievedSong.setLength(updateSong.getLength());
+        retrievedSong.setUrl(updateSong.getUrl());
 
         songRepository.save(retrievedSong);
 
@@ -64,16 +69,15 @@ public class SongController {
 
     @PostConstruct
     public void fillDB() {
-
         if(songRepository.count()==0) {
-            songRepository.save(new Song("7875455454","111","Rock","Roxanne",120));
-            songRepository.save(new Song("7875455454","111","Rock","De DO DO",120));
-            songRepository.save(new Song("6242455454","222","rap","Goosbumps",120));
-            songRepository.save(new Song("6242455455","222","rap","Highest in the room",120));
+            songRepository.save(new Song("ISRC7875455454","MBID1","MAID1","Rock","Roxanne",120,"url"));
+            songRepository.save(new Song("ISRC","MBID1","MAID1","Rock","De DO DO",120,"url"));
+            songRepository.save(new Song("ISRC6242455454","MBID2","MAID2","rap","Goosbumps",120,"url"));
+            songRepository.save(new Song("ISRC6242455455","MBID2","MAID2","rap","Highest in the room",120,"url"));
         }
 
         System.out.println("Song Service");
-        System.out.println("Songs test:" + songRepository.findSongsByMBID("222").size());
+        System.out.println("Songs test:" + songRepository.findSongsByMBID("MBID1").size());
     }
 
 
