@@ -189,7 +189,7 @@ public class SongControllerIntegrationTests {
 
                 .andExpect(jsonPath("$.isrc", is("ISRC7875455454")))
                 .andExpect(jsonPath("$.mbid", is("MBID111")))
-                .andExpect(jsonPath("$.maid", is("MAID3")))
+                .andExpect(jsonPath("$.maid", is("MAID1")))
                 .andExpect(jsonPath("$.genre", is("Rock")))
                 .andExpect(jsonPath("$.title", is("Message In A Bottle")))
                 .andExpect(jsonPath("$.length", is(120)))
