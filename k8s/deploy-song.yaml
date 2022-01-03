@@ -59,7 +59,7 @@ spec:
     spec:
       containers:
         - name: song-service-server
-          image: anthonydecap/song-service
+          image: realnigel/song-service
           imagePullPolicy: Always
           ports:
             - name: http
