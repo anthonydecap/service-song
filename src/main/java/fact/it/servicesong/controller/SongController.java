@@ -74,10 +74,21 @@ public class SongController {
             songRepository.save(new Song("ISRC","MBID1","MAID1","Rock","De DO DO",120,"url"));
             songRepository.save(new Song("ISRC6242455454","MBID2","MAID2","rap","Goosbumps",120,"url"));
             songRepository.save(new Song("ISRC6242455455","MBID2","MAID2","rap","Highest in the room",120,"url"));
-        }
 
-        System.out.println("Song Service");
-        System.out.println("Songs test:" + songRepository.findSongsByMBID("MBID1").size());
+            songRepository.save(new Song("GBAHT2000193","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Trouble’s Coming",228,"6voIJ7OWwRabSZDC77D5Hp"));
+            songRepository.save(new Song("GBAHT2001120","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Oblivion",161,"3Ye5icBka8ODjcaEQakPvZ"));
+            songRepository.save(new Song("GBAHT2001121","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Typhoons",236,"5aFGo8wHEntVxFI8IF7Wuj"));
+            songRepository.save(new Song("GBAHT2001122","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Who Needs Friends",190,"7AXoSHtReIvoJPi5XKXecl"));
+            songRepository.save(new Song("GBAHT2001123","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Million and One",258,"7AXoSHtReIvoJPi5XKXecl"));
+            songRepository.save(new Song("GBAHT2001124","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Limbo",293,"1P8BrsNLHWO5R0cK6zvyhc"));
+            songRepository.save(new Song("GBAHT2001125","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Either You Want It",180,"1P8BrsNLHWO5R0cK6zvyhc"));
+            songRepository.save(new Song("GBAHT2001126","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Boilermaker",209,"27BEATf1JFhKDmwJdpGVSk"));
+            songRepository.save(new Song("GBAHT2001127","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Mad Visions",189,"3S66ufJ1RdjOKf2azjXWjI"));
+            songRepository.save(new Song("GBAHT2001128","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Hold On",194,"5rUGbardlhPNzbHH3qOEOk"));
+            songRepository.save(new Song("GBAHT2001129","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","All We Have Is Now",213,"4CUyNgMxAFKFEf1KrbAEbY"));
+
+
+        };
     }
 
 
