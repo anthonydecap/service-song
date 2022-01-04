@@ -124,6 +124,20 @@ public class SongController {
             songRepository.save(new Song("GBAAM0201178","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Contact",157,"5MuKkqc8lnzldouHA0MwgL"));
             songRepository.save(new Song("GBAAM0201179","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Does Everyone Stare",227,"45BfHifOOhDpyPJn7El1JU"));
             songRepository.save(new Song("GBAAM0201180","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","No Time This Time",197,"5qolpk9X28wwWLGE8sZ328"));
+
+            songRepository.save(new Song("GBAHT0500591","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Take a Bow",275,"4jrCMOG9OPe6iF4vWFxatb"));
+            songRepository.save(new Song("GBAHT0500592","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Starlight",240,"3skn2lauGk7Dx6bVIt5DVj"));
+            songRepository.save(new Song("GBAHT0500593","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Supermassive Black Hole",212,"3lPr8ghNDBLc2uZovNyLs9"));
+            songRepository.save(new Song("GBAHT0500594","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Map of the Problematique",258,"5YXr4AGfUQpLSxtFSsKUh6"));
+            songRepository.save(new Song("GBAHT0500595","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Soldier's Poem",124,"6jH5aCuXgtygWpx7BF54at"));
+            songRepository.save(new Song("GBAHT0500596","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Invincible",301,"2zmR3FG7iOGDAdwrVPzdg9"));
+            songRepository.save(new Song("GBAHT0500597","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Assassin",211,"6JnFVmPyJvjnfBag0hhIFa"));
+            songRepository.save(new Song("GBAHT0500601","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Exo-Politics",233,"20vZII9Yu52czI9Fk4p39r"));
+            songRepository.save(new Song("GBAHT0500599","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","City of Delusion",288,"3Sno9FE8r2uz8QP0MtnTPL"));
+            songRepository.save(new Song("GBAHT0500598","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Hoodoo",223,"0EkE0ripJ9OFNzvZANzo5C"));
+            songRepository.save(new Song("GBAHT0500600","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Knights of Cydonia",366,"7ouMYWpwJ422jRcDASZB7P"));
+            songRepository.save(new Song("GBAHT0600546","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Glorious",281,"6IfitwQQ1Gu9g9QnLWDHRY"));
+
         };
     }
 
