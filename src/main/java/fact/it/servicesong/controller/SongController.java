@@ -138,6 +138,17 @@ public class SongController {
             songRepository.save(new Song("GBAHT0500600","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Knights of Cydonia",366,"7ouMYWpwJ422jRcDASZB7P"));
             songRepository.save(new Song("GBAHT0600546","9c9f1380-2516-4fc9-a3e6-f9f61941d090","af2e8e23-e9c3-4e67-8ad8-66387c5898fd","Rock","Glorious",281,"6IfitwQQ1Gu9g9QnLWDHRY"));
 
+            songRepository.save(new Song("GBAHT0900320","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Uprising",304,"4VqPOruhp5EdPBeR92t6lQ"));
+            songRepository.save(new Song("GBAHT0900321","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Resistance",346,"1C2QJNTmsTxCDBuIgai8QV"));
+            songRepository.save(new Song("GBAHT0900322","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Undisclosed Desires",235,"0It6VJoMAare1zdV2wxqZq"));
+            songRepository.save(new Song("GBAHT0900323","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","United States of Eurasia (+Collateral Damage)",347,"0tHbQRjL5phd8OoYl2Bdnd"));
+            songRepository.save(new Song("GBAHT0900324","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Guiding Light",253,"7jZ5A8bf63qYaUXfuGoxVk"));
+            songRepository.save(new Song("GBAHT0900325","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Unnatural Selection",414,"28FJMlLUu9NHuwlZWFKDn7"));
+            songRepository.save(new Song("GBAHT0900326","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","MK Ultra",246,"0MrkZz4D3fGlEkhebjPPrh"));
+            songRepository.save(new Song("GBAHT0900327","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","I Belong to You (+Mon Coeur S'Ouvre a Ta Voix)",338,"114rzL6VEy9bb3amPcY3tw"));
+            songRepository.save(new Song("GBAHT0900328","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Exogenesis: Symphony Pt. 1 (Overture)",258,"6zkhhG8iQ8waiwGkQuhoE1"));
+            songRepository.save(new Song("GBAHT0900329","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Exogenesis: Symphony Pt. 2 (Cross-pollination)",236,"39kUTBz4uJoy5VtmIybz9D"));
+            songRepository.save(new Song("GBAHT0900330","9c9f1380-2516-4fc9-a3e6-f9f61941d090","8411a4db-e104-4e45-995f-24b2f1849437","Rock","Exogenesis: Symphony Pt. 3 (Redemption)",287,"76ZDwA8uTyMys4LIS3pBUX"));
         };
     }
 
