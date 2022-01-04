@@ -112,6 +112,18 @@ public class SongController {
             songRepository.save(new Song("GBAYE9300110","a74b1b7f-71a5-4011-9441-d0b5e4122711","cd76f76b-ff15-3784-a71d-4da3078a6851","Rock","I Can't",253,"13nQ70PnhDnTkYqCmdg3sy"));
             songRepository.save(new Song("GBAYE9200116","a74b1b7f-71a5-4011-9441-d0b5e4122711","cd76f76b-ff15-3784-a71d-4da3078a6851","Rock","Lurgee",187,"30C1FoJzEhNUILsxghioGz"));
             songRepository.save(new Song("GBAYE9300111","a74b1b7f-71a5-4011-9441-d0b5e4122711","cd76f76b-ff15-3784-a71d-4da3078a6851","Rock","Blow Out",282,"5XpcTQlNnfIQbiWE4hvYo7"));
+
+            songRepository.save(new Song("GBAAM0201170","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Message In A Bottle",290,"1oYYd2gnWZYrt89EBXdFiO"));
+            songRepository.save(new Song("GBAAM0201171","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Reggatta De Blanc",185,"2EEp2vTGSRDSLHWUF80EZZ"));
+            songRepository.save(new Song("GBAAM0201172","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","It's Alright For You",192,"5fTI7JCaMRK09WtwG8ZrRK"));
+            songRepository.save(new Song("GBAAM0201173","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Bring On The Night",255,"4EkNINvDLeGgIL4zYGsYPb"));
+            songRepository.save(new Song("GBAAM0201174","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Deathwish",251,"4i3SC58kB65zfKo1oOW1q9"));
+            songRepository.save(new Song("GBAAM0201175","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Walking On The Moon",300,"62uLNJgVZaFiEiKV4LpoYJ"));
+            songRepository.save(new Song("GBAAM0201176","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","On Any Other Day",176,"6rN4PWNTD8AY1mfLslqrQG"));
+            songRepository.save(new Song("GBAAM0201177","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","The Bed's Too Big Without You",265,"3PfBnnkOf0LbCw2jixUCQG"));
+            songRepository.save(new Song("GBAAM0201178","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Contact",157,"5MuKkqc8lnzldouHA0MwgL"));
+            songRepository.save(new Song("GBAAM0201179","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","Does Everyone Stare",227,"45BfHifOOhDpyPJn7El1JU"));
+            songRepository.save(new Song("GBAAM0201180","9e0e2b01-41db-4008-bd8b-988977d6019a","2b98e6d7-a521-332f-961e-d281ba33ba3d","Rock","No Time This Time",197,"5qolpk9X28wwWLGE8sZ328"));
         };
     }
 
