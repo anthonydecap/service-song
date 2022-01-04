@@ -87,7 +87,18 @@ public class SongController {
             songRepository.save(new Song("GBAHT2001128","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Hold On",194,"5rUGbardlhPNzbHH3qOEOk"));
             songRepository.save(new Song("GBAHT2001129","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","All We Have Is Now",213,"4CUyNgMxAFKFEf1KrbAEbY"));
 
-
+            songRepository.save(new Song("GBAYE9400059","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Planet Telex",259,"37JISltgxizbDAyNEEqkTY"));
+            songRepository.save(new Song("GBAYE9400054","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","The Bends",246,"7oDFvnqXkXuiZa1sACXobj"));
+            songRepository.save(new Song("GBAYE9400055","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","High and Dry",257,"2a1iMaoWQ5MnvLFBDv4qkf"));
+            songRepository.save(new Song("GBAYE9400056","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Fake Plastic Trees",290,"73CKjW3vsUXRpy3NnX4H7F"));
+            songRepository.save(new Song("GBAYE9400057","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Bones",189,"76RAlQcfuQknnQFruYDj6Q"));
+            songRepository.save(new Song("GBAYE9400058","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","(Nice Dream)",233,"1tZcw7GtIqviL32bzaKdSo"));
+            songRepository.save(new Song("GBAYE9400060","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Just",234,"1dyTcli07c77mtQK3ahUZR"));
+            songRepository.save(new Song("GBAYE9400065","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","My Iron Lung",276,"0jyikFM0Umv0KlnrOEKtTG"));
+            songRepository.save(new Song("GBAYE9400064","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Bullet Proof ... I Wish I Was",208,"5XuU9htN358NTMCcqRvfDV"));
+            songRepository.save(new Song("GBAYE9400063","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Black Star",247,"6UO72VSXEONxdfLyABihs9"));
+            songRepository.save(new Song("GBAYE9400062","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Sulk",222,"1elQc2QcyuBkI8FUIbNvcy"));
+            songRepository.save(new Song("GBAYE9400061","a74b1b7f-71a5-4011-9441-d0b5e4122711","b8048f24-c026-3398-b23a-b5e50716cbc7","Rock","Street Spirit (Fade Out)",253,"2QwObYJWyJTiozvs0RI7CF"));
         };
     }
 
