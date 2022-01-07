@@ -37,7 +37,7 @@ public class SongControllerUnitTests {
     public void givenSong_whenGetSongByISRC_thenReturnJsonReview() throws Exception {
         Song song1Album1 = new Song("ISRC7875455454","MBID111","MAID1","Rock","Roxanne",120,"url");
 
-        given(songRepository.findSongByISRC("ISRC7875455454")).willReturn(song1Album1);
+        given(songRepository.findFirstByISRC("ISRC7875455454")).willReturn(song1Album1);
 
         mockMvc.perform(get("/songs/{ISRC}","ISRC7875455454"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -169,7 +169,7 @@ public class SongControllerUnitTests {
     public void givenSong_whenPutSong_thenReturnJsonReview() throws Exception{
         Song song1Album1 = new Song("ISRC7875455454","MBID111","MAID1","Rock","Roxanne",120,"url");
 
-        given(songRepository.findSongByISRC("ISRC7875455454")).willReturn(song1Album1);
+        given(songRepository.findFirstByISRC("ISRC7875455454")).willReturn(song1Album1);
 
         Song updatedSong = new Song("ISRC7875455454","MBID111","MAID1","Rock","Roxanne",160,"url");
 
@@ -191,7 +191,7 @@ public class SongControllerUnitTests {
     public void givenSong_whenDeleteSong_thenStatusOk() throws Exception{
         Song songToBeDeleted = new Song("ISRC7875455454","MBID111","MAID1","Rock","Roxanne",120,"url");
 
-        given(songRepository.findSongByISRC("ISRC7875455454")).willReturn(songToBeDeleted);
+        given(songRepository.findFirstByISRC("ISRC7875455454")).willReturn(songToBeDeleted);
 
         mockMvc.perform(delete("/songs/{ISRC}","ISRC7875455454")
                 .contentType(MediaType.APPLICATION_JSON))
@@ -200,7 +200,7 @@ public class SongControllerUnitTests {
 
     @Test
     public void givenNoSong_whenDeleteSong_thenStatusNotFound() throws Exception{
-        given(songRepository.findSongByISRC("ISRC7875455454")).willReturn(null);
+        given(songRepository.findFirstByISRC("ISRC7875455454")).willReturn(null);
 
         mockMvc.perform(delete("/songs/{ISRC}","ISRC7875455454")
                 .contentType(MediaType.APPLICATION_JSON))

@@ -11,7 +11,7 @@ public interface SongRepository extends MongoRepository<Song, String> {
     List<Song> findSongsByGenre(String genre);
     List<Song> findSongsByMBID(String MBID);
     List<Song> findSongsByMAID(String MAID);
-    Song findSongByISRC(String ISRC);
+    Song findFirstByISRC(String ISRC);
 }
 
 

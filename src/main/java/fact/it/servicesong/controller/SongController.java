@@ -17,7 +17,7 @@ public class SongController {
 
     @GetMapping("/songs/{ISRC}")
     public Song getSongByISRC(@PathVariable String ISRC) {
-        return songRepository.findSongByISRC(ISRC);
+        return songRepository.findFirstByISRC(ISRC);
     }
 
     @GetMapping("/songs/artist/{MBID}")
@@ -39,7 +39,7 @@ public class SongController {
 
     @PutMapping("/songs")
     public Song updateSong(@RequestBody Song updateSong) {
-        Song retrievedSong = songRepository.findSongByISRC(
+        Song retrievedSong = songRepository.findFirstByISRC(
             updateSong.getISRC());
 
         retrievedSong.setISRC(updateSong.getISRC());
@@ -57,7 +57,7 @@ public class SongController {
 
     @DeleteMapping("/songs/{ISRC}")
     public ResponseEntity deleteSong(@PathVariable String ISRC) {
-        Song song = songRepository.findSongByISRC(ISRC);
+        Song song = songRepository.findFirstByISRC(ISRC);
         if(song!=null) {
             songRepository.delete(song);
             return ResponseEntity.ok().build();
@@ -70,11 +70,6 @@ public class SongController {
     @PostConstruct
     public void fillDB() {
         if(songRepository.count()==0) {
-            songRepository.save(new Song("ISRC7875455454","MBID1","MAID1","Rock","Roxanne",120,"url"));
-            songRepository.save(new Song("ISRC","MBID1","MAID1","Rock","De DO DO",120,"url"));
-            songRepository.save(new Song("ISRC6242455454","MBID2","MAID2","rap","Goosbumps",120,"url"));
-            songRepository.save(new Song("ISRC6242455455","MBID2","MAID2","rap","Highest in the room",120,"url"));
-
             songRepository.save(new Song("GBAHT2000193","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Trouble’s Coming",228,"6voIJ7OWwRabSZDC77D5Hp"));
             songRepository.save(new Song("GBAHT2001120","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Oblivion",161,"3Ye5icBka8ODjcaEQakPvZ"));
             songRepository.save(new Song("GBAHT2001121","aa62b28e-b6d4-4086-91d4-e5fac1ed56f3","dd7e7ced-a44d-4ce5-9654-c60a0d71fc51","Rock","Typhoons",236,"5aFGo8wHEntVxFI8IF7Wuj"));
